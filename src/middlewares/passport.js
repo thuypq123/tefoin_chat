@@ -13,7 +13,7 @@ passport.use(
   new jwtStrategy(
     {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken("Authorization"),
-      secretOrKey: process.env.SECRET,
+      secretOrKey: "AuthenticationJWT",
     },
     async function (payload, done) {
       try {
