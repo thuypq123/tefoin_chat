@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+
+    <script src="https://use.typekit.net/hoy3lrg.js"></script>
+    <script>
+      try {
+        Typekit.load({ async: true });
+      } catch (e) {}
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.socket.io/4.2.0/socket.io.min.js"
+      integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./accesss/Modal.css" />
+    <link rel="stylesheet" href="./accesss//Produce_fe.css" />
+
+    <link
+      rel="SHORTCUT ICON"
+      href="https://media.istockphoto.com/vectors/cute-cartoon-earth-vector-id1050787688?s=612x612"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://use.typekit.net/hoy3lrg.js"></script>
+    <script>
+      try {
+        Typekit.load({ async: true });
+      } catch (e) {}
+    </script>
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./accesss/Produce.css" />
+    <link rel="stylesheet" href="./accesss/styleSearch.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.socket.io/4.2.0/socket.io.min.js"
+      integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+          <h1>TEFOIN</h1>
+        </a>
+      </div>
+    </nav>
+    <!-- <form class="form-inline">
+      <label for="email"></label>
+      <input
+        type="email"
+        id="Search_email"
+        placeholder="Enter email"
+        name="email"
+      />
+      <button class="btn btn-search">Search</button>
+      <button class="btn btn-search create">create</button>
+    </form> -->
+    <div id="frame">
+      <div id="sidepanel">
+        <div id="profile">
+          <div class="wrap">
+            <img
+              id="profile-img"
+              src="https://i.stack.imgur.com/l60Hf.png"
+              class="online"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <p>...</p>
+            <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
+            <div id="status-options">
+              <ul>
+                <li id="status-online" class="active">
+                  <span class="status-circle"></span>
+                  <p>Online</p>
+                </li>
+                <li id="status-away">
+                  <span class="status-circle"></span>
+                  <p>Away</p>
+                </li>
+                <li id="status-busy">
+                  <span class="status-circle"></span>
+                  <p>Busy</p>
+                </li>
+                <li id="status-offline">
+                  <span class="status-circle"></span>
+                  <p>Offline</p>
+                </li>
+              </ul>
+            </div>
+            <div id="expanded">
+              <label for="twitter"
+                ><i class="fa fa-facebook fa-fw" aria-hidden="true"></i
+              ></label>
+              <input name="twitter" type="text" value="Hmm??" />
+              <label for="twitter"
+                ><i class="fa fa-twitter fa-fw" aria-hidden="true"></i
+              ></label>
+              <input name="twitter" type="text" value="Hmm??" />
+              <label for="twitter"
+                ><i class="fa fa-instagram fa-fw" aria-hidden="true"></i
+              ></label>
+              <input name="twitter" type="text" value="Hmm??" />
+            </div>
+          </div>
+        </div>
+        <div id="search">
+          <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+          <input type="text" placeholder="Search contacts..." />
+        </div>
+        <div id="contacts">
+          <ul id="contact-ul1">
+            <li class="contact">
+              <div class="wrap">
+                <span class="contact-status"></span>
+                <img
+                  src="https://media.istockphoto.com/vectors/cute-cartoon-earth-vector-id1050787688?s=612x612"
+                  alt=""
+                />
+                <div class="meta">
+                  <p class="name">TEFOIN</p>
+                  <p class="preview"><span>This is:</span> Public Chat</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul id="contact-ul"></ul>
+        </div>
+        <div id="bottom-bar">
+          <button
+            id="addcontact"
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#addcontactModal"
+          >
+            <i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
+            <span>Add contact</span>
+          </button>
+          <div
+            class="modal fade bd-example-modal-lg"
+            id="addcontactModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-contact" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <p class="modal-title" id="exampleModalLabel">Add contact</p>
+                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button> -->
+                </div>
+                <div class="modal-body addContact-body">
+                  <!-- SEARCH -->
+                  <form class="form_search" onkeydown="return event.key != 'Enter';">
+                    <div class="contact-search">
+                      <input
+                        class="contact-search-input"
+                        type="search btn-search"
+                        placeholder="Search..."
+                      />
+                    </div>
+                  </form>
+
+                  <div class="contact-line"></div>
+                  <!--List contact -->
+                  <ul class="list-contact">
+                    <!-- <li>
+                      <img
+                        class="contact-avt"
+                        src="./img/KhangAvt.jpeg"
+                        alt=""
+                      />
+
+                      <div class="contact-info">
+                        <p class="contact-name">Vo Duy Khang</p>
+                        <p class="contact-email">voduykhang312001@gmail.com</p>
+                      </div>
+
+                      <div class="contact-addFriend">
+                        <input
+                          type="button"
+                          class="btn btn-secondary create"
+                          value="Create chat"
+                          data-toggle="modal"
+                          data-target="#createChatModal"
+                        />
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+
+                <div class="modal-footer">
+                  <input
+                    type="button"
+                    form="form-create-conversation"
+                    class="btn btn-secondary btn btn-search"
+                    value="Search"
+                  />
+                  <!-- Modal create chat -->
+                  <input
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    value="Cancel"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <button
+            id="settings"
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#setModal"
+          >
+            <i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+            <span>Settings</span>
+          </button>
+          <div
+            class="modal fade bd-example-modal-lg"
+            id="setModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <p class="modal-title" id="exampleModalLabel">Profile</p>
+                </div>
+                <div class="modal-body profile-body">
+                  <div class="profile-avt">
+                    <img src="./img/KhangAvt.jpeg" alt="" />
+                    <p class="profile-avt-name">Võ Duy Khang</p>
+                    <p class="profile-avt-username">Username</p>
+                    <p class="profile-avt-email">voduykhang312001@gmail.com</p>
+                  </div>
+                  <div class="profile-inf">
+                    <p>Thông tin</p>
+
+                    <form action="" class="modal-profile" id="modal-profile">
+                      <div class="field">
+                        <input
+                          id="first-name"
+                          type="text"
+                          placeholder="First Name"
+                          required
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="last-name"
+                          type="text"
+                          placeholder="Last Name"
+                          required
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="username"
+                          type="text"
+                          placeholder="Username"
+                          required
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="email"
+                          type="text"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="password"
+                          type="Password"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="new-password"
+                          type="Password"
+                          placeholder="New Password"
+                        />
+                      </div>
+                      <div class="field">
+                        <input
+                          id="confim-password"
+                          type="Password"
+                          placeholder="Confim Password"
+                          required
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <input
+                    type="submit"
+                    form="modal-profile"
+                    class="btn btn-primary"
+                    value="Save profile"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    value="Close"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="contact-profile">
+          <img
+            src="https://media.istockphoto.com/vectors/cute-cartoon-earth-vector-id1050787688?s=612x612"
+            alt=""
+          />
+          <p class="showname">TEFOIN</p>
+          <div class="social-media">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="messages">
+          <ul id="messages"></ul>
+        </div>
+
+        <div class="message-input">
+          <form class="wrap" id="form">
+            <input id="input" type="text" placeholder="Write your message..." />
+            <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+            <button class="submit">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./accesss/helper.js"></script>
+  </body>
+</html>
