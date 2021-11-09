@@ -13,7 +13,7 @@ const encodedToken = (userID) => {
       iat: new Date().getTime(),
       exp: new Date().setDate(new Date().getDate() + 3),
     },
-    JWT_SECRET
+    "AuthenticationJWT"
   );
 };
 
