@@ -5,6 +5,7 @@ const { ExtractJwt } = require("passport-jwt");
 const { JWT_SECRET, auth } = require("../config/jwt");
 const User = require("../models/register");
 const bcrypt = require("bcryptjs");
+require('dotenv').config();
 const GooglePlusTokenStratery = require("passport-google-plus-token");
 
 //  TOKEN => DATA
@@ -12,7 +13,7 @@ passport.use(
   new jwtStrategy(
     {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken("Authorization"),
-      secretOrKey: "AuthenticationJWT",
+      secretOrKey: process.env.SECRET,
     },
     async function (payload, done) {
       try {
