@@ -24,6 +24,7 @@ const io = new Server(server, {
 // ------------------------------------------------------------------------------------------
 db.connect();
 //passport.use(localStrategy);
+app.use(passport.initialize());
 JWT_SECRET = "AuthenticationJWT"
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
