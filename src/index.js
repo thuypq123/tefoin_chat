@@ -13,7 +13,7 @@ const users = require('./models/register');
 const { Server } = require("socket.io")
 //const { JWT_SECRET } = require('./config/jwt');
 require("dotenv").config();
-//const passport = require("passport");
+const passport = require("passport");
 //app.use(passport.initialize());
 
 const server = http.createServer(app);
