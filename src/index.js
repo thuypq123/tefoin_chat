@@ -160,5 +160,5 @@ io.on("connection", (socket) => {
 });
 
 const PORT = 3500;
-server.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+server.listen(process.env.PORT||PORT, () => console.log(`http://localhost:${PORT}`));
 // ------------------------------------------------------------------------------------------
