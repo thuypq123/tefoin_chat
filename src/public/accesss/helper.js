@@ -44,7 +44,12 @@ socket.on("connect", () => {
   });
 
   socket.on("renderData", (message) => {
-    document.getElementById(message.conversationId).style.backgroundColor = "#a86aea"
+    if(message.conversationId != 'Tefoin'){
+      document.getElementById(message.conversationId).style.backgroundColor = "#a86aea"
+    }
+    else{
+      document.getElementById("Tefoin").style.backgroundColor = "#a86aea"
+    }
     console.log(message);
     if(message.conversationId === readCookie('conversation'))
     renderMessage(message.text, message.emailID === getUserId(socket));
