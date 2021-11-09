@@ -11,10 +11,10 @@ const conversation = require('./models/conversation');
 const conversationUser = require('./models/conversationUser');
 const users = require('./models/register');
 const { Server } = require("socket.io")
-const { JWT_SECRET } = require('./config/jwt');
+//const { JWT_SECRET } = require('./config/jwt');
 require("dotenv").config();
-const passport = require("passport");
-app.use(passport.initialize());
+//const passport = require("passport");
+//app.use(passport.initialize());
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -23,7 +23,7 @@ const io = new Server(server, {
 
 // ------------------------------------------------------------------------------------------
 db.connect();
-passport.use(localStrategy);
+//passport.use(localStrategy);
 JWT_SECRET = "AuthenticationJWT"
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
