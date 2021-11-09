@@ -83,11 +83,11 @@ passport.use(
         if (!user) return done(null, false, { message: "Incorrect email" });
 
         const isCorrectPassword = await user.isValidPassword(password);
-        console.log(user);
 
         if (!isCorrectPassword) return done(null, false);
 
         done(null, user);
+        console.log(user);
       } catch (err) {
         done(err, false);
       }
