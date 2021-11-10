@@ -87,7 +87,7 @@ const register = async (req, res, next) => {
     await newUser
       .save()
       .then((user) => {
-        res.redirect("/");
+        res.redirect("/login");
       })
       .catch((err) => {
         res.json({
