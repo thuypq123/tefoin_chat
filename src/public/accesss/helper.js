@@ -28,7 +28,9 @@ function renderMessage(message, isCurrentUser) {
 //================================================================
 socket.on("connect", () => {
   console.log("a user connect server");
-
+  const html = `<p style="font-size: 20px">${emailID.split("@")[0]}</p>`
+  const name = document.querySelector(".profile_name");
+  name.innerHTML = html;
 
   socket.emit("init", token);
   socket.emit("initConversation", token);
