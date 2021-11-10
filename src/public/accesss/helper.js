@@ -35,6 +35,9 @@ socket.on("connect", () => {
   socket.emit("init", token);
   socket.emit("initConversation", token);
   socket.on("init", ({ data, emailID }) => {
+    const html = `<p style="font-size: 20px">${emailID.split("@")[0]}</p>`
+    const name = document.querySelector(".profile_name");
+    name.innerHTML = html;
     data.forEach((element) => {
       const userIdClient = emailID;
       if(element.conversationId === readCookie('conversation'))
